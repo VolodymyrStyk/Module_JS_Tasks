@@ -11,15 +11,14 @@ console.log(number);
 alert(isPow());
 
 function isPow(n = number, b = 2) {
-    console.log(number);
-    console.log(n);
     let i =0;
+    let inputNum = n;
     if (n > 1) {
         while (n % b === 0) {
             n /= b;
             i++;
         }
     }
-    console.log(`${number} = ${b} ** ${i}`);
-    return n === 1? `YES-> ${number} = ${b} ** ${i}`:'NO';
+    console.log(`${inputNum} = ${b} ** ${i}`);
+    return n === 1? `YES-> ${inputNum} = ${b} ** ${i}`:'NO';
 }

@@ -17,7 +17,7 @@ console.log(arr);
 let i = 0;
 
 function play() {
-    var timeout = Math.round(Math.random() * 1000);
+    let timeout = Math.round(Math.random() * 1000);
     console.log(str[i] + ' ' + '0.' + timeout + 's');
     document.write(str[i]);
     i++;
@@ -27,7 +27,6 @@ function play() {
 }
 
 setTimeout(play, 1000);
-
 
 // let id = setInterval(function() {
 //     for ( i = 0; i < arr.length; i++) {

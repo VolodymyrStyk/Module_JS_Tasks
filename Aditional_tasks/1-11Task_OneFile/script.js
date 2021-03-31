@@ -66,22 +66,21 @@
 // Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае.
 // Операцией возведения в степень пользоваться нельзя!
 //
-//let number = parseInt(prompt('Input your number: '));
+// let number = parseInt(prompt('Input your number: '));
 // console.log(number);
 // alert(isPow());
 //
 // function isPow(n = number, b = 2) {
-//     console.log(number);
-//     console.log(n);
 //     let i =0;
+//     let inputNum = n;
 //     if (n > 1) {
 //         while (n % b === 0) {
 //             n /= b;
 //             i++;
 //         }
 //     }
-//     console.log(`${number} = ${b} ** ${i}`);
-//     return n === 1? `YES-> ${number} = ${b} ** ${i}`:'NO';
+//     console.log(`${inputNum} = ${b} ** ${i}`);
+//     return n === 1? `YES-> ${inputNum} = ${b} ** ${i}`:'NO';
 // }
 //
 // ______________________________________________________________
@@ -165,7 +164,7 @@
 // [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
 // flat використовувати заборонено.
 //
-// let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
+//let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
 // let newArr = [];
 // let j = 0;
 //
@@ -187,11 +186,13 @@
 //         newArr.push(arrElem);
 //     }
 //     if (arrElem === array[array.length-1]) {
-//         console.log(newArr);
+//         console.table(newArr);
 //     }
 // }
 //===================2версія==========
+// let arrayN = [1, 3, ['Hello', 'Wordd', [9, 6, 1,[9, 6, 1,[9, 6, 1]]]], ['oops'], 9];
 // let arrLen = array.length - 1;
+// let newArr = [];
 // function isArray(arr) {
 //     for (let i = 0; i < arr.length; i++) {
 //         if (Array.isArray(arr[i])) {
@@ -205,6 +206,7 @@
 //         console.log(newArr);
 //     }
 // }
+// isArray(arrayN)
 //
 //
 // ___________________________________________________________________
@@ -369,13 +371,13 @@
 // о (затримка 1)
 //
 //
-//let str = "Hello World";
+// let str = "Hello World";
 // let arr = str.split('');
 // console.log(arr);
 // let i = 0;
 //
 // function play() {
-//     var timeout = Math.round(Math.random() * 1000);
+//     let timeout = Math.round(Math.random() * 1000);
 //     console.log(str[i] + ' ' + '0.' + timeout + 's');
 //     document.write(str[i]);
 //     i++;
