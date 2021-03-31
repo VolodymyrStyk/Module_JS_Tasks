@@ -190,7 +190,8 @@
 //     }
 // }
 //===================2версія==========
-// let arrayN = [1, 3, ['Hello', 'Wordd', [9, 6, 1,[9, 6, 1,[9, 6, 1]]]], ['oops'], 9];
+// let flag  = 0;
+// let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1,[9, 6, 1,[9, 6, 1]]]], ['oops'], 9];
 // let arrLen = array.length - 1;
 // let newArr = [];
 // function isArray(arr) {
@@ -201,12 +202,12 @@
 //             newArr.push(arr[i]);
 //         }
 //     }
-//     j++;
-//     if(j === arrLen){
-//         console.log(newArr);
+//     flag++;
+//     if(flag === arrLen){
+//         console.table(newArr);
 //     }
 // }
-// isArray(arrayN)
+// isArray(array)
 //
 //
 // ___________________________________________________________________

@@ -3,8 +3,8 @@
 // flat використовувати заборонено.
 
 //let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
-let newArr = [];
-let j = 0;
+// let newArr = [];
+// let j = 0;
 
 // for (let arrElem of array) {
 //     if (Array.isArray(arrElem)) {
@@ -27,9 +27,10 @@ let j = 0;
 //         console.table(newArr);
 //     }
 // }
-
+let flag  = 0;
 let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1,[9, 6, 1,[9, 6, 1]]]], ['oops'], 9];
 let arrLen = array.length - 1;
+let newArr = [];
 function isArray(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (Array.isArray(arr[i])) {
@@ -38,9 +39,9 @@ function isArray(arr) {
             newArr.push(arr[i]);
         }
     }
-    j++;
-    if(j === arrLen){
-        console.log(newArr);
+    flag++;
+    if(flag === arrLen){
+        console.table(newArr);
     }
 }
 isArray(array)
