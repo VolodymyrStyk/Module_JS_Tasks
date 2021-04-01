@@ -395,3 +395,481 @@
 // let validN3 = validateName(n3);
 // console.log(`${validN3} === ${n3V}`);
 // console.log(validN3 === n3V);
+
+
+// ******************* НАЗАД В МИНУЛЕ *********************** //
+// Створити функцію яка :
+//  - Додає в боді блок з текстом "Hello owu"
+// - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+//     Для кожної властивості створити всередені блока автомоблія свій блок
+
+// function htmlCreator(elemName, elemText) {
+//     //=========Hello owu
+//     let userHello = 'Hello  owu';
+//     let userElem = document.createElement('div');
+//     userElem.innerText = userHello;
+//     document.body.appendChild(userElem);
+//     //=======userElem userText
+//     let helloDiv = document.createElement(typeElement);
+//     helloDiv.innerText = textHello;
+//     document.body.appendChild(helloDiv);
+// }
+// let typeElement = 'h1'
+// let textHello = 'Hello Volodymyr';
+// htmlCreator(typeElement, textHello);
+//
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
+//
+// let carIdElem = document.createElement('div');
+// carIdElem.id = 'cars';
+// document.body.appendChild(carIdElem);
+//
+// function htmlCreator(carrArr, id) {
+//     for (const car of carrArr) {
+//         let carItem = document.createElement('div');
+//         carItem.classList.add('car-' + car.name.toLowerCase());
+//         document.getElementById(id).appendChild(carItem);
+//         carItem.style.border = '1px solid red';
+//
+//         for (const carProp in car) {
+//
+//             if (typeof car[carProp] !== 'object') {
+//                 console.log(car[carProp]); //car name
+//                 let carName = document.createElement('div');
+//                 carName.classList.add(car.name.toLowerCase());
+//                 carName.innerText = `${car[carProp]}`;
+//                 carItem.appendChild(carName);
+//                 document.getElementById(id).appendChild(carItem);
+//                 document.body.appendChild(carIdElem);
+//             }
+//
+//             if (typeof car[carProp] === 'object') {
+//                 console.log(carProp); //car properties title
+//                 let carProperties = document.createElement('div');
+//                 carProperties.classList.add(car.name.toLowerCase()+'-'+carProp);
+//                 carProperties.innerText = `${carProp} :
+//                 `;
+//                 carItem.appendChild(carProperties);
+//                 document.getElementById(id).appendChild(carItem);
+//                 document.body.appendChild(carIdElem);
+//
+//                 for (const carProperty in car[carProp]){
+//                     //console.log(carProperty);
+//                     //console.log(car[carProp][carProperty]);
+//
+//                     let carPropertie = `${carProperty}: ${car[carProp][carProperty]},  `;
+//                     console.log(carPropertie);
+//                     //carPropertie.classList.add(car.name.toLowerCase()+'-'+carProp+'-'+carProperty);
+//                     //carPropertie.innerText = `${carProperty}: ${car[carProp][carProperty]}`;
+//                     carProperties.append(carPropertie);
+//                     carItem.appendChild(carProperties);
+//                     document.getElementById(id).appendChild(carItem);
+//                     document.body.appendChild(carIdElem);
+//                 }
+//             }
+//         }
+//
+//     }
+//
+//     document.body.appendChild(document.getElementById(id));
+// }
+//
+//
+// let carsArray = [
+//     {
+//         name: 'Ford',
+//         properties: {
+//             model: 'Focus',
+//             color: 'White',
+//             engine: 'diesel',
+//             speed: 300
+//         }
+//     },
+//     {
+//         name: 'Opel',
+//         properties: {
+//             model: 'Astra',
+//             color: 'Black',
+//             engine: 'diesel',
+//             speed: 310
+//         }
+//     }, {
+//         name: 'Renault',
+//         properties: {
+//             model: 'Megan',
+//             color: 'Silver',
+//             engine: 'diesel',
+//             speed: 290
+//         }
+//     }, {
+//         name: 'Volkswagen',
+//         properties: {
+//             model: 'Golf',
+//             color: 'Green',
+//             engine: 'benzin',
+//             speed: 330
+//         }
+//     }, {
+//         name: 'Audi',
+//         properties: {
+//             model: 'A6',
+//             color: 'Dark Gray',
+//             engine: 'benzin',
+//             speed: 350
+//         }
+//     }];
+// let idCarArray = 'cars';
+// let result = htmlCreator(carsArray, idCarArray);
+//
+
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+//     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+//     Для кожної властивості створити всередені блока автомоблія свій блок
+
+// let carIdElem = document.createElement('div');
+// carIdElem.id = 'cars';
+// document.body.appendChild(carIdElem);
+//
+// function htmlCreator(carrArr, id) {
+//     for (const car of carrArr) {
+//         let carItem = document.createElement('div');
+//         carItem.classList.add('car-' + car.name.toLowerCase());
+//         document.getElementById(id).appendChild(carItem);
+//         carItem.style.border = '1px solid red';
+//
+//         for (const carProp in car) {
+//
+//             if (typeof car[carProp] !== 'object') {
+//                 console.log(car[carProp]); //car name
+//                 let carName = document.createElement('div');
+//                 carName.classList.add(car.name.toLowerCase());
+//                 carName.innerText = `${car[carProp]}`;
+//                 carItem.appendChild(carName);
+//                 document.getElementById(id).appendChild(carItem);
+//                 document.body.appendChild(carIdElem);
+//             }
+//
+//             if (typeof car[carProp] === 'object') {
+//                 console.log(carProp); //car properties title
+//                 let carProperties = document.createElement('div');
+//                 carProperties.classList.add(car.name.toLowerCase()+'-'+carProp);
+//                 carProperties.innerText = `${carProp}: `;
+//                 carItem.appendChild(carProperties);
+//                 document.getElementById(id).appendChild(carItem);
+//                 document.body.appendChild(carIdElem);
+//
+//                 for (const carProperty in car[carProp]){
+//                     //console.log(carProperty);
+//                     //console.log(car[carProp][carProperty]);
+//
+//                     let carPropertie = document.createElement('div');
+//                     console.log(carPropertie);
+//                     carPropertie.classList.add(car.name.toLowerCase()+'-'+carProp+'-'+carProperty);
+//                     carPropertie.innerText = `${carProperty}: ${car[carProp][carProperty]}`;
+//                     carProperties.append(carPropertie);
+//                     carItem.appendChild(carProperties);
+//                     document.getElementById(id).appendChild(carItem);
+//                     document.body.appendChild(carIdElem);
+//                 }
+//             }
+//         }
+//     }
+//     document.body.appendChild(carIdElem);
+// }
+//
+//
+// let carsArray = [
+//     {
+//         name: 'Ford',
+//         properties: {
+//             model: 'Focus',
+//             color: 'White',
+//             engine: 'diesel',
+//             speed: 300
+//         }
+//     },
+//     {
+//         name: 'Opel',
+//         properties: {
+//             model: 'Astra',
+//             color: 'Black',
+//             engine: 'diesel',
+//             speed: 310
+//         }
+//     }, {
+//         name: 'Renault',
+//         properties: {
+//             model: 'Megan',
+//             color: 'Silver',
+//             engine: 'diesel',
+//             speed: 290
+//         }
+//     }, {
+//         name: 'Volkswagen',
+//         properties: {
+//             model: 'Golf',
+//             color: 'Green',
+//             engine: 'benzin',
+//             speed: 330
+//         }
+//     }, {
+//         name: 'Audi',
+//         properties: {
+//             model: 'A6',
+//             color: 'Dark Gray',
+//             engine: 'benzin',
+//             speed: 350
+//         }
+//     }];
+// let idCarArray = 'cars';
+// let result = htmlCreator(carsArray, idCarArray);
+
+
+// // ******************* НАЗАД В МИНУЛЕ *********************** //
+
+
+//================ Реалізація через функції=================================
+
+// let carIdElem = document.createElement('div');
+// carIdElem.id = 'cars';
+// document.body.appendChild(carIdElem);
+//
+// function isObject(obj) {
+//     return (typeof obj === 'object');
+// }
+//
+// function searchObj(obj,carItem) {
+//     //console.log(obj);
+//     for (const objKey in obj) {
+//         if (isObject(obj[objKey])) {
+//             //console.table(objKey);
+//             let itemDiv = document.createElement('div');
+//             let text = itemDiv.innerText = `${objKey}:`;
+//             drawElement(text,carItem);
+//             //carItem.appendChild(itemDiv);
+//             searchObj(obj[objKey],carItem);
+//         } else {
+//             //console.table(objKey, obj[objKey]);
+//             let itemDiv = document.createElement('div');
+//             let text = itemDiv.innerText = `${objKey}: ${obj[objKey]}`;
+//             //console.log(text);
+//             //console.log(carItem);
+//             drawElement(text,carItem)
+//             //carItem.appendChild(itemDiv);
+//         }
+//     }
+// }
+//
+// function drawElement(str,place){
+//     console.log(str);
+//     console.log(place);
+//     let newDiv = document.createElement('div');
+//     newDiv.innerText = str;
+//     place.appendChild(newDiv);
+//     carIdElem.append(place);
+// }
+//
+//
+// function htmlCreator(carrArr, id) {
+//
+//     for (const car of carrArr) {
+//         let carItem = document.createElement('div');
+//         carItem.classList.add('car-' + car.name.toLowerCase());
+//         let className = 'car-' + car.name.toLowerCase();
+//         document.getElementById(id).appendChild(carItem);
+//         carItem.style.border = '1px solid red';
+//         if (isObject(car)) {
+//             searchObj(car,carItem);
+//         }
+//         document.body.appendChild(carIdElem);
+//     }
+// }
+//
+// let carsArray = [
+//     {
+//         name: 'Ford',
+//         properties: {
+//             model: 'Focus',
+//             color: 'White',
+//             engine: 'diesel',
+//             speed: 300
+//         }
+//     },
+//     {
+//         name: 'Opel',
+//         properties: {
+//             model: 'Astra',
+//             color: 'Black',
+//             engine: 'diesel',
+//             speed: 310
+//         }
+//     }, {
+//         name: 'Renault',
+//         properties: {
+//             model: 'Megan',
+//             color: 'Silver',
+//             engine: 'diesel',
+//             speed: 290
+//         }
+//     }, {
+//         name: 'Volkswagen',
+//         properties: {
+//             model: 'Golf',
+//             color: 'Green',
+//             engine: 'benzin',
+//             speed: 330
+//         }
+//     }, {
+//         name: 'Audi',
+//         properties: {
+//             model: 'A6',
+//             color: 'Dark Gray',
+//             engine: 'benzin',
+//             speed: 350
+//         }
+//     }];
+// let idCarArray = 'cars';
+// let result = htmlCreator(carsArray, idCarArray);
+//
+//
+// //========= обєкт для перевірки рекурсивності
+// // let idCarArray = 'cars';
+// let carsArrays = [
+//      {
+//          name: 'Ford',
+//          properties: {
+//              model: 'Focus',
+//              color: 'White',
+//              engine: 'diesel',
+//              speed: {
+//                  low: 300,
+//                  higth: 500,
+//                  averenge: {
+//                      max: true,
+//                      min: false
+//                  }
+//              }
+//          }
+//      }];
+//  console.log(htmlCreator(carsArrays, idCarArray));
+
+//================================================================================================
+
+//============================================================================================
+//                              ЗАДАЧІ ПІДВИЩЕНОГО РІВНЯ СКЛАДНОСТІ
+// ============================================================================================
+//
+// 1) Точная степень двойки.
+// Дано натуральное число N.
+// Выведите слово YES, если число N является точной степенью двойки,
+// или слово NO в противном случае.
+// Операцией возведения в степень пользоваться нельзя!
+//
+
+// function pow(n) {
+//     if (typeof n ==='number' && !isNaN(n)){
+//     console.log(n);
+//     i++;
+//     return (!(n % 2) ? pow(n / 2):
+//     (n===1)?  `Yes ${userNum} -> 2** ${i-1}`: 'No');
+//     }else {
+//         return 'No';
+//     }
+// }
+// let userNum = parseInt(prompt('Check if number is power of two','1024'));
+// let i = 0;
+// alert(pow(userNum));
+
+// 2) Deep Copy
+// реалізувати глибоке копіювання обєкту за допомогою рекурсій
+//
+//=========копіювання через JSON
+// function deepCopy(obj) {
+//     //console.log(obj);
+//     let newObj = JSON.parse(JSON.stringify(obj));
+//     //console.log(newObj);
+//     return newObj;
+// }
+//
+// let carsArray = [
+//     {
+//         name: 'Ford',
+//         model: 'Focus',
+//         color: 'White',
+//         engine: 'diesel',
+//         speed: 300
+//     }, {
+//         name: 'Opel',
+//         model: 'Astra',
+//         color: 'Black',
+//         engine: 'diesel',
+//         speed: 320
+//     }, {
+//         name: 'Renualt',
+//         model: 'Megane',
+//         color: 'Silver',
+//         engine: 'diesel',
+//         speed: 310
+//     },]
+// let newObjectCars = deepCopy(carsArray);
+// console.log(carsArray);
+// console.log(newObjectCars);
+// carsArray[0].name = 'Audi';
+
+//=========копіювання через Функцію
+// function copy(mainObj) {
+//     let objCopy = {}; // objCopy копія mainObj
+//
+//     for (let key in mainObj) {
+//         objCopy[key] = mainObj[key]; // копія кожної властивості objCopy
+//     }
+//     return objCopy;
+// }
+//
+// const mainObj = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4,
+//     },
+// }
+// let newObjectCars = copy(mainObj);
+// console.log(newObjectCars);
+// mainObj.a = 55;
+// console.log(mainObj);
+// console.log(newObjectCars);
+
+
+// 3) Flat
+// Вирівняти багаторівневий масив в однорівневий
+// [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
+
+// let array = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
+//
+// function flatting(arr) {
+//     for (const element of arr) {
+//         if(Array.isArray(element)){
+//             arr = arr.flat();
+//             //console.log(arr);
+//             flatting(arr);
+//         }
+//     }
+//     return arr;
+// }
+//
+// let newArray = flatting(array);
+// console.log(newArray);
+// //=======================================
+//
+// let array2 = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
+// function flattenDeep(arr1) {
+//     return arr1.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+// }
+// let newArray2 = flattenDeep(array2);
+// console.log(newArray2);
