@@ -12,7 +12,7 @@
 // 2) створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попередню функцію.
 
 // function randomArr(arr=[]){
-//     for (let i = 0; i < 10; i++) {
+//     for (let i = 0; i < arr.length; i++) {
 //         let randNum = Math.floor(Math.random()*100);
 //         arr[i] = randNum;
 //     }
@@ -24,19 +24,28 @@
 // ============================================================================================
 // 3) створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
 
-// function minNumb(num1, num2, num3) {
-//     //console.log((num1 > num2)? (num1>num3)? console.log(num1):console.log(num3) :(num2>num3)?console.log(num2):console.log(num3));
-//     // console.log(num1);
-//     // console.log(num2);
-//     // console.log(num3);
-//     // повертаємо іфами ==================
-//     if (num1 < num2 && num1 < num3) return num1;
-//     if (num2 < num1 && num2 < num2) return num2;
-//     if (num3 < num1 && num3 < num2) return num3;
+//function minNumb(num1, num2, num3) {
+    //console.log((num1 > num2)? (num1>num3)? console.log(num1):console.log(num3) :(num2>num3)?console.log(num2):console.log(num3));
+    // console.log(num1);
+    // console.log(num2);
+    // console.log(num3);
+    // повертаємо іфами ==================
+    // if (num1 < num2 && num1 < num3) return num1;
+    // if (num2 < num1 && num2 < num2) return num2;
+    // if (num3 < num1 && num3 < num2) return num3;
+
+    //повертаємо тернаркою =================
+    // return ((num1 < num2 && num1 < num3) ? num1 :
+    //     (num2 < num1 && num2 < num3) ? num2 : num3);
+//     //робимо через цикл і масив
+//     let min = num1;
+//     for (const element of [num1,num2,num3]) {
+//         if(min > element){
+//             min = element;
+//         }
+//     }
+//     return min;
 //
-//     //повертаємо тернаркою =================
-//     // return ((num1 < num2 && num1 < num3) ? num1 :
-//     //     (num2 < num1 && num2 < num3) ? num2 : num3);
 // }
 //
 // let min = minNumb(13, 33, 3);
@@ -55,8 +64,17 @@
 //     // if (num3 > num1 && num3 > num2) return num3;
 //
 //     //повертаємо тернаркою =================
-//     return ((num1 > num2 && num1 > num3) ? num1 :
-//         (num2 > num1 && num2 > num3) ? num2 : num3);
+//     //return ((num1 > num2 && num1 > num3) ? num1 :
+//      //   (num2 > num1 && num2 > num3) ? num2 : num3);
+//     //робимо через цикл і масив
+//     let max = num1;
+//     for (const element of [num1,num2,num3]) {
+//         if(max < element){
+//             max = element;
+//         }
+//     }
+//     return max;
+//
 // }
 //
 // let max = maxNumb(323, 33, 3);
