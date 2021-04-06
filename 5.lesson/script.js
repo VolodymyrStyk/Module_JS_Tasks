@@ -390,17 +390,26 @@
 //         this.age = age;
 //         this.findShoeSize = findShoeSize;
 //     }
+//     searchCinderella(cinderellaArr = []) {
+//         for (const cindarela of cinderellaArr) {
+//             if (cindarela.footSize === this.findShoeSize) {
+//                 console.log(`${this.name} знайшов свою попелюшку це ${cindarela.name}.`);
+//                 console.table(this);
+//                 console.table(cindarela);
+//             }
+//         }
+//     }
 // }
 //
 // let rudolf = new Prince('Rudolf', 27, 33.5);
 //
-// for (const cindarela of cindarelasArray) {
-//     if (cindarela.footSize === rudolf.findShoeSize){
-//         console.log(`${rudolf.name} знайшов свою попелюшку це ${cindarela.name}.`);
-//         console.table(rudolf);
-//         console.table(cindarela);
-//     }
-// }
+// // for (const cindarela of cindarelasArray) {
+// //     if (cindarela.footSize === rudolf.findShoeSize){
+// //         console.log(`${rudolf.name} знайшов свою попелюшку це ${cindarela.name}.`);
+// //         console.table(rudolf);
+// //         console.table(cindarela);
+// //     }
+// // }
 //--------------------------------------------------------------------------------------------------
 //
 //-створити функцію конструктор попелюшка з полями ім'я, вік, розмір ноги
@@ -430,18 +439,27 @@
 //     this.name = name;
 //     this.age = age;
 //     this.findingFootSize = findingFootSize;
+//     this.searchCinderella = function (cinderellaArr = []) {
+//         for (const cindarela of cinderellaArr) {
+//             if (cindarela.footSize === this.findingFootSize) {
+//                 console.log(`${this.name} знайшов свою попелюшку це ${cindarela.name}.`);
+//                 console.table(this);
+//                 console.table(cindarela);
+//             }
+//         }
+//     }
 // }
 //
 // let ted = new Prince('Ted', 35, 35);
 //
-// for (const cindarela of cindarelasArray) {
-//     if (cindarela.footSize === ted.findingFootSize){
-//         console.log(`${ted.name} знайшов свою попелюшку це ${cindarela.name}.`);
-//         console.table(ted);
-//         console.table(cindarela);
-//     }
-//
-// }
+// // for (const cindarela of cindarelasArray) {
+// //     if (cindarela.footSize === ted.findingFootSize){
+// //         console.log(`${ted.name} знайшов свою попелюшку це ${cindarela.name}.`);
+// //         console.table(ted);
+// //         console.table(cindarela);
+// //     }
+// //
+// // }
 //==================================================================================================
 // - створити класс персонаж з полями ім'я, вік
 // - створити нащадка попелюшка з додатковим полем розмір ноги
@@ -450,56 +468,72 @@
 // - має додаткове поле туфелька яку він знайшов.
 // - за допоиоги циклу знайти яка попелюшка повинна бути з принцом
 //
-// class Personage{
+// class Personage {
 //     constructor(name, age) {
 //         this.name = name;
 //         this.age = age;
 //     }
-//     say(){
+//
+//     say() {
 //         console.log(`Hello my name is ${this.name}, мені ${this.age} роки`);
 //     }
 // }
 //
-// class Cinderella extends Personage{
+// class Cinderella extends Personage {
 //     constructor(name, age, footSize) {
 //         super(name, age);
 //         this.footSize = footSize;
 //     }
-//     say(){
+//
+//     say() {
 //         console.log(`Hello my name is ${this.name}, мені ${this.age} роки мій розмір ноги ${this.footSize}`);
 //     }
 // }
-// class Prince extends Personage{
+//
+// class Prince extends Personage {
 //     constructor(name, age, findFootSize) {
 //         super(name, age);
 //         this.findFootSize = findFootSize;
 //     }
-//     say(){
+//
+//     say() {
 //         console.log(`Hello my name is ${this.name}, мені ${this.age} у мене туфелька розміру ${this.findFootSize}`);
+//     }
+//
+//     searchCinderella(cinderellaArr = []) {
+//         for (const cindarela of cinderellaArr) {
+//             if (cindarela.footSize === this.findFootSize) {
+//                 console.log(this.say());
+//                 console.log(cindarela.say());
+//                 console.log(`${this.name} знайшов свою попелюшку це ${cindarela.name}.`);
+//                 console.table(this);
+//                 console.table(cindarela);
+//             }
+//         }
 //     }
 // }
 //
 // let ann = new Cinderella('Ann', 22, 32)
-// let marie = new Cinderella('Marie',21,33);
-// let lisa = new Cinderella('Lisa',26,34);
-// let julia = new Cinderella('Julia',27,33.5);
-// let marianna = new Cinderella('Marianna',33,34);
-// let olya = new Cinderella('Olya',35,35);
-// let vika = new Cinderella('Vika',22,36);
-// let karina = new Cinderella('Karina',18,33);
-// let luba = new Cinderella('Luba',33,37);
-// let jenifer = new Cinderella('Jenifer',45,45);
+// let marie = new Cinderella('Marie', 21, 33);
+// let lisa = new Cinderella('Lisa', 26, 34);
+// let julia = new Cinderella('Julia', 27, 33.5);
+// let marianna = new Cinderella('Marianna', 33, 34);
+// let olya = new Cinderella('Olya', 35, 35);
+// let vika = new Cinderella('Vika', 22, 36);
+// let karina = new Cinderella('Karina', 18, 33);
+// let luba = new Cinderella('Luba', 33, 37);
+// let jenifer = new Cinderella('Jenifer', 45, 45);
 //
 // let konan = new Prince('Konan', 33, 32);
 //
-// let cindarelasArray = [ann,marie,lisa,julia,marianna,olya,vika,karina,luba,jenifer];
+// let cindarelasArray = [ann, marie, lisa, julia, marianna, olya, vika, karina, luba, jenifer];
 //
-// for (const cindarela of cindarelasArray) {
-//     if (cindarela.footSize === konan.findFootSize) {
-//         console.log(konan.say());
-//         console.log(cindarela.say());
-//         console.log(`${konan.name} знайшов свою попелюшку це ${cindarela.name}.`);
-//         console.table(konan);
-//         console.table(cindarela);
-//     }
-// }
+// // for (const cindarela of cindarelasArray) {
+// //     if (cindarela.footSize === konan.findFootSize) {
+// //         console.log(konan.say());
+// //         console.log(cindarela.say());
+// //         console.log(`${konan.name} знайшов свою попелюшку це ${cindarela.name}.`);
+// //         console.table(konan);
+// //         console.table(cindarela);
+// //     }
+// // }
