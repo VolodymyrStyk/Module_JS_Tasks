@@ -67,17 +67,18 @@
 
 // function maxNumArr(arr){
 //     // //максимальне число черз Math.max
-//     let maxNum = Math.max(...arr);
+//     //let maxNum = Math.max(...arr);
 //     //console.log(maxNum);
-//     return maxNum;
-//     // //максимальне число черз масив
-//     // let acum = 0;
-//     // for (const element of arr) {
-//     //     if(element > acum){
-//     //         acum = element;
-//     //     }
-//     // }
-//     // return acum;
+//     //return maxNum;
+//     //максимальне число черз масив
+//
+//     let acum = 0;
+//     for (const element of arr) {
+//         if(element > acum){
+//             acum = element;
+//         }
+//     }
+//     return acum;
 // }
 // let array = [1,2,5,3,1,545,2,2];
 // let maxNumA = maxNumArr(array);
@@ -421,7 +422,7 @@
 // let typeElement = 'h1'
 // let textHello = 'Hello Volodymyr';
 // htmlCreator(typeElement, textHello);
-//
+
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //     Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
 //
@@ -873,3 +874,4 @@
 // }
 // let newArray2 = flattenDeep(array2);
 // console.log(newArray2);
+
