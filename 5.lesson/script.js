@@ -537,3 +537,166 @@
 // //         console.table(cindarela);
 // //     }
 // // }
+//=================================================================================================
+//New Task
+//Реалізовуємо свій компютерний магазин.
+// ===
+// Необхідно реалізувати базовий клас комютера. Який має лише параметри:
+// Оперативна память.
+// Потужність процесора. (цифра від 0 до 1000)
+// Назва.
+// В кожного компютера має бути метод включання.
+//=====
+// Компютер можна апгрейдити.
+// Потужність процесора можна збільшувати максимум на 10%. Зменшувати її не можна.
+// Оперативку можна збільшити лише в 2 рази. Зменшувати її не можна.
+// Для зміни характеритик мають бути свої методи. Мняти змінну "в лоб" заборонено.
+// ===
+//
+// class Computer {
+//     constructor(ram, power, name) {
+//         this.ram = ram;
+//         this.power = power;
+//         this.name = name;
+//         this.status = false;
+//     }
+//
+//     powerClick() {
+//         if (this.status) {
+//             console.log('Turn Of');
+//             return this.status = false;
+//         } else {
+//             console.log('Turn On');
+//             return this.status = true;
+//         }
+//     }
+//
+//     upgradePower(increasePower = 0) {
+//         if (increasePower >= 0 && increasePower <= (this.power / 10)) {
+//             return this.power += increasePower;
+//         } else {
+//             return console.log('Incorrect value ;(');
+//         }
+//     }
+//
+//     upgradeRam(increaseRam = 2) {
+//         if (increaseRam === 2) {
+//             return this.ram *= increaseRam;
+//         }
+//     }
+//
+//     info() {
+//         for (const key in this) {
+//             console.log(`${key}: ${this[key]}`);
+//         }
+//     }
+// }
+//
+// let myComputer = new Computer(4, 500, 'my Computer');
+// //console.log('Class Computer: ',myComputer);
+//
+// // ===
+// // Від базового компютрера треба реалізувати ноутбук.
+// // Він має нову властивість дюймаж монітора.
+// //
+// // У нього зявляється нова змінна роботи батареї. Ця змінна визначається як потужність / (дюйми * оперативку)
+// class Laptop extends Computer {
+//     constructor(ram, power, name, screen) {
+//         super(ram, power, name);
+//         this.screen = screen;
+//         this.timeWork = this.updateTimeWork();
+//     }
+//     updateTimeWork(){
+//         return this.timeWork = this.power / (this.screen * this.ram);
+//     }
+//     info() {
+//         this.updateTimeWork();
+//         for (const key in this) {
+//             console.log(`${key}: ${this[key]}`);
+//         }
+//     }
+// }
+//
+// let myLaptop = new Laptop(8, 700, 'my Laptop', 15.6);
+// //console.log('Class Laptop: ',myLaptop);
+//
+// // ===
+// // Від ноутбука потрібно зробити ультрабук.
+// // Він має нову змінну ваги.
+// // При включенні ультрабуку має видаватися помилка, якшо вага більша за 2кг та батарея тримаж менше ніж 4 години.
+//
+// class UltraLaptop extends Laptop {
+//     constructor(ram, power, name, screen, weight) {
+//         super(ram, power, name, screen);
+//         this.weight = weight;
+//     }
+//
+//     powerClick() {
+//         this.weight > 2 && this.timeWork < 4 ? console.warn('Error not enough Time work and weight is so heavy') : console.log('Parameters OK');
+//         if (this.status) {
+//             console.log('Turn Of');
+//             return this.status = false;
+//         } else {
+//             console.log('Turn On');
+//             return this.status = true;
+//         }
+//     }
+// }
+//
+// let myUltraLaptop = new UltraLaptop(16, 1300, 'my Ultra Laptop', 17, 2);
+// //console.log('Class UltraLaptop: ', myUltraLaptop);
+//
+// // ===
+// // Від базвого класу потрібно створити базовий ПК.
+// // В нього має бути новий метод запуску ігор.
+// // Кількість FPS визначається як потужність / опервтивку.
+// // Example: `You are playing *GAME_NAME* with *FPS_COUNT* FSP`
+//
+// class BasicPC extends Computer {
+//     constructor(ram, power, name) {
+//         super(ram, power, name);
+//         this.fps = this.updateFps();
+//     }
+//     updateFps(){
+//         return this.fps = this.power / this.ram;
+//     }
+//     info() {
+//         this.updateFps();
+//         for (const key in this) {
+//             console.log(`${key}: ${this[key]}`);
+//         }
+//     }
+//     launchGame(gameName = '*GAME_NAME*') {
+//         console.log(`You are playing ${gameName} with *FPS_COUNT* ${this.fps}`);
+//     }
+// }
+// let myBasicPC = new BasicPC(4, 500, 'my Basic PC');
+// //console.log('Class BasicPC: ', myBasicPC);
+//
+// // ===
+// // ===
+// // Від базового ПК необхідно зробити ігнорий ПК.
+// // Кількість ФПС має бути рівно в 2 рази більший ніж в звичайного ПК.
+// // При запуску однієї гри потужніть процесора має падати на 0.1%.
+// // Якшо потужність процесора менша ніж 500. І оперативка менша за 8 потрібно ивдати помилку,
+// // що на цьому відрі ігри не запускаються.
+//
+// class GamePC extends BasicPC {
+//     constructor(ram, power, name) {
+//         super(ram, power, name);
+//         this.fps = this.updateFps();
+//     }
+//     updateFps(){
+//         return this.fps = 2 * (this.power / this.ram);
+//     }
+//     launchGame() {
+//         this.power -= this.power/1000;
+//         if (this.power < 500 || this.ram < 8) {
+//             console.warn('На цьому відрі ігри не запускаються.')
+//         } else {
+//             console.log(`You are playing *GAME_NAME* with *FPS_COUNT* ${this.fps}`);
+//         }
+//     }
+// }
+// let myGamePC = new GamePC(8, 900, 'my Game PC');
+// console.log('Class GamePC: ', myGamePC);
