@@ -6,7 +6,7 @@
 //  e) Проітерувати його forEach та вивести кожеш елмент за допомогою document.write
 //  f) За допомогою map збільшити кожен елемент в масиві в три рази.
 //  g) Порахувати загальну суму всіх елментів у масиві (reduce)
-
+//
 // let array = [1, 3, 2, 4, 5, 7, 78, 9, 0, 87, 5, 43, 2, 2, 7, 8, 4, 3, 6, 20];
 // console.log(array);
 // // a) відсортувати його від меншого до більшого.
@@ -36,16 +36,16 @@
 //  b) Відсортувати в зворотньому порядку
 //  c) Отримати в новому масиві тільки ті слова, довжина яких більша за 4 букви (filter)
 //  d) Змінити кожне слово в масиві додавши на початок 'Sam says *ваше слово*'
-
+//
 // let strArray = ['wasd', 'apple', 'qwe', 'w', 'asd', 'vcx', 'vova', 'fds', 'hjkjyn', 'tyh', 'thr',
-//     'asx', 'ssddqw', 'yujhg', 'ercx', 'zcz', 'tyhg', 'vbcncb', 'yjhjg', 'qsad'];
-// //console.log(strArray);
+//     'asx', 'ssddqw', 'yujhg', 'ercx', 'Zcz', 'tyhg', 'Abcncb', 'yjhjg', 'qsad'];
+//console.log(strArray);
 //
 // a) Відсортувати його в алфавітному порядку
-// let strSort = strArray.sort();
+// let strSort = strArray.sort((a, b) => (a.toLowerCase() > b.toLowerCase()) ? 1 : -1);
 // console.log(strSort);
 // b) Відсортувати в зворотньому порядку
-// let strSortReverse = strArray.sort((a, b) => (a < b) ? 1 : -1);
+// let strSortReverse = strArray.sort((a, b) => (a.toLowerCase() < b.toLowerCase()) ? 1 : -1);
 // console.log(strSortReverse);
 // c) Отримати в новому масиві тільки ті слова, довжина яких більша за 4 букви (filter)
 // let strArrFiltred = strArray.filter(value => value.length > 4);
@@ -80,7 +80,7 @@
 //    та зберегти це в новий масив (первинний масив залишиться без змін)
 // d) відсортувати його за індентифікатором
 // e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
-
+//
 // const users = [
 //     {name: 'vasya', age: 31, isMarried: false},
 //     {name: 'petya', age: 30, isMarried: true},
@@ -445,7 +445,7 @@
 // // console.log(nameSort);
 // // -- Відсорутвати по назві вулиці
 // // let streetSort = usersWithAddress.sort((a, b) => {
-// //     return ((a.address.street > b.address.street) ? 1 : -1);
+// //     return (a.address.street > b.address.street) ? 1 : -1;
 // // });
 // // console.log(streetSort);
 // // -- Відсорутвати по номеру будинку
@@ -712,27 +712,7 @@
 // let sum = cars.reduce(((acc, value) => acc + value.price),0);
 // console.log(sum);
 
-// // in progres for refactoring
-////// let Car = class {
-// // //     constructor(producer ='', power = 0, price = 0, year = 0, owner = {}) {
-// // //         this.producer = producer;
-// // //         this.power = power;
-// // //         this.price = price;
-// // //         this.year = year;
-// // //         this.owner = owner;
-// // //     }
-// // // }
-// // // let Owner = class {
-// // //     constructor(name = '',age = 0,drivingExp = 0) {
-// // //         this.name = name;
-// // //         this.age = age;
-// // //         this.drivingExp = drivingExp;
-// // //     }
-// // // }
-// // // let volodymyr = new Owner('Volodymyr',26,10);
-// // // let peugeot = new Car('peugeot',120,10000,2016,volodymyr);
-// // // console.log(peugeot);
-// // finish
+
 
 //----------------------------------------------------------------------------------------------
 //Задача: дан отсортированный по возрастанию массив целых чисел.
@@ -761,3 +741,134 @@
 // }
 //
 // check(4, arr);
+
+//
+// //==================================================================================================
+// //==================Переписую завдання з використанням класів і функцій
+// // Створити обєкт автомобіля з полями:
+// // Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+// // Власник автомобіля теж має бути обєкт, у якого є поля
+// // Імя, вік, стаж водіння.
+// // Створити не менше 7 та не більше 20 машинок.
+// // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+// // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// // Для початку вкладіть всі наші створені автомобілі в масив cars.
+// // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
+// // то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+// // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+//
+//
+// //==============DESCRIPTION=====================
+// // функція repairCar - збільшує потужність авто на 10% і додає поле - repair:true; Отримує і повертає один елемент з масиву
+// // функція upPrice - збільшує ціну авто на 5%; Отримує і повертає один елемент масиву
+// // функція newDriver - замінює водія на раномного водія; Отримує і повертає один елемент масиву
+// // функція goToDrSchool - додає до поля drivingExp +1; Отримує і повертає один елемент масиву
+// // функція checkQualification - перевіряє всіх водіїв і при потребі відправляє на навчання; Отримує і повертає масив даних
+// // функція calculateCarsPrice - приймає масив даних, сумує ціну всіх авто і повертає загальну суму; Отримує масив і повертає числове значення
+//
+//
+// // Створити обєкт автомобіля з полями:
+// // Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+// // Власник автомобіля теж має бути обєкт, у якого є поля
+// // Імя, вік, стаж водіння.
+// // Створити не менше 7 та не більше 20 машинок.
+// const Car = class {
+//     constructor(producer = '', power = 0, price = 0, year = 0, driver = {}) {
+//         this.producer = producer;
+//         this.power = power;
+//         this.price = price;
+//         this.year = year;
+//         this.driver = driver;
+//     }
+// }
+// const Driver = class {
+//     constructor(name = '', age = 0, drivingExp = 0) {
+//         this.name = name;
+//         this.age = age;
+//         this.drivingExp = drivingExp;
+//     }
+// }
+// let volodymyr = new Driver('Volodymyr', 26, 10);
+// let peugeot = new Car('peugeot', 120, 10000, 2016, volodymyr);
+// let ivan = new Driver('Ivan', 24, 4);
+// let opel = new Car('opel', 115, 8000, 2012, ivan);
+// let vasya = new Driver('Vasya', 28, 3);
+// let renault14 = new Car('renault', 110, 7000, 2014, vasya);
+// let bodya = new Driver('bodya', 24, 7);
+// let audi14 = new Car('audi', 170, 20000, 2014, bodya);
+// let roman = new Driver('roman', 27, 3);
+// let audi01 = new Car('audi', 140, 5000, 2001, roman);
+// let pavlo = new Driver('pavlo', 26, 6);
+// let renault05 = new Car('renault', 140, 6000, 2005, pavlo);
+// let sergii = new Driver('sergii', 27, 5);
+// let volkswagen = new Car('volkswagen', 170, 25000, 2019, sergii);
+// let sanya = new Driver('sanya', 26, 5);
+// let chevrolet = new Car('chevrolet', 90, 4000, 2009, sanya);
+// // Для початку вкладіть всі наші створені автомобілі в масив cars.
+// let cars = [peugeot, opel, renault14, audi14, audi01, renault05, volkswagen, chevrolet];
+// // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+// const repairCar = function (car) {
+//     car.power *= 1.1;
+//     car.repair = true;
+//     return car;
+// }
+// const upPrice = function (car) {
+//     return car.price *= 1.05;
+// };
+// // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+// cars.map((value) => {
+//     if (value.year < 2013) {
+//         repairCar(value);
+//     }
+//     return value;
+// })
+// //console.log(cars);
+// // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// const newDriver = function (car) {
+//     if (car.repair) {
+//         let driverName = ['Vova', 'Vasja', 'Mykola', 'Yrii', 'Ivan', 'Roman', 'Oleg', 'Ted', 'Sania', 'Olena', 'Ola'];
+//         car.driver.name = driverName[Math.floor(Math.random() * driverName.length)];
+//         car.driver.age = Math.floor(Math.random() * (95 - 18)) + 18;
+//         car.driver.drivingExp = Math.floor(Math.random() * (15 - 1)) + 1;
+//         let newDriver = new Driver(car.driver.name, car.driver.age, car.driver.drivingExp);
+//         car.driver = newDriver;
+//     }
+//     return car;
+// }
+// // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+// cars.map((value) => {
+//     if (value.repair) {
+//         newDriver(value);
+//     }
+//     return value;
+// });
+// //console.log(cars);
+// // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+// cars.map((value,index) => {
+//     if (index%2){
+//         repairCar(value);
+//         upPrice(value);
+//     }
+//    return value;
+// });
+// // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
+// // то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+// const  goToDrSchool = function (driverStudy){
+//     driverStudy.driver.drivingExp += 1;
+//     return driverStudy;
+// };
+// const checkQualification = function (checkCarsDrivers){
+//     checkCarsDrivers.map(value=> {
+//         if (value.driver.age > 25 && value.driver.drivingExp < 5){
+//             goToDrSchool(value);
+//         }
+//         return value;
+//     });
+//     return checkCarsDrivers;
+// }
+// // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+// const calculateCarsPrice = function (cars){
+//     return cars.reduce(((acc, value) => acc + value.price), 0);
+// }
+// //==================================================================================================
