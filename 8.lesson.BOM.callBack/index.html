@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+    <div class="container">
+        <div id='task1'>
+            <form action="" method="post">
+                <label for="input-text-area"><b>Input data: </b></label><br>
+                <textarea id="input-text-area" name="story" rows="5" cols="33">
+            </textarea>
+            </form>
+            <hr>
+            <br>
+        </div>
+        <div id='task2'>
+            <form action="" method="post" id='form-task2'>
+                <label for="inputText"><b>Input data: </b></label><br><br>
+                <textarea id="inputText" rows="5" cols="33" name="inputText">
+                </textarea><br><br>
+                <label for="user-name"><b>Input user name: </b></label><br><br>
+                <input type="text" id="user-name" name='user-name'><br><br>
+                <label for="user-pass"><b>Input user password: </b></label><br><br>
+                <input type="password" id="user-pass" name='user-pass'>
+                <p><b>Please select your gender:</b></p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br>
+                <p><b><b>Please select your skill:</b></b></p>
+                <input type="checkbox" id="htm5-skill" name="htm5-skill" value="HTML5">
+                <label for="htm5-skill">HTML5</label><br>
+                <input type="checkbox" id="css3-skill" name="css3-skill" value="CSS3">
+                <label for="css3-skill">CSS3</label><br>
+                <input type="checkbox" id="java-script-skill" name="java-script-skill" value="JS">
+                <label for="java-script-skill">JS</label><br><br>
+                <label for="cars"><b>Choose a car:</b></label>
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+            <hr>
+            <br>
+        </div>
+        <div id='task3'>
+            <button id="back"><-- back</button>
+            <button id="forward">forward --></button>
+            <br><br>
+            <form action="" method="post">
+                <label for="userText"><b>Your TEXT: </b></label><br>
+                <textarea id="userText" name="userText" rows="5" cols="33">
+            </textarea>
+            </form>
+            <button id="save">SAVE</button>
+            <button id="clearHistory">CLEAR</button>
+            <hr>
+            <br>
+        </div>
+        <div id='task4'>
+            <form action="" method="post" id='contact'>
+                <label for="contact-full-name"><b>Input contact full-name: </b></label><br>
+                <input type="text" id="contact-full-name" name='contact-full-name'><br>
+                <label for="contact-phone"><b>Input contact number: </b></label><br>
+                <input type="number" id="contact-phone" name='contact-phone'><br>
+                <label for="contact-email"><b>Input contact email: </b></label><br>
+                <input type="email" id="contact-email" name='contact-email'><br>
+                <label for="contact-company-name"><b>Company-name: </b></label><br>
+                <input type="text" id="contact-company-name" name='contact-company-name'><br>
+                <label for="contact-company-department"><b>Company department: </b></label><br>
+                <input type="text" id="contact-company-department" name='contact-company-department'><br>
+                <label for="contact-birthday"><b>Contact Birthday:</b></label><br>
+                <input type="date" id="contact-birthday" name='contact-birthday'><br><br>
+            </form>
+            <button id="save-contact">Save Contact</button>
+            <button id="clear-all">Clear All</button>
+            <br> <br>
+            <button id="all-contacts">Show All Contacts</button>
+            <button id="refresh-page">Refresh</button>
+        </div>
+        <div id="render-contact"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
